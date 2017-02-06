@@ -3,15 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于搭建blog的一些坑点 | Hexo</title>
+  <title>关于搭建blog的一些事 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="关于搭建blog的一些坑点">
+  <meta name="description" content="##一、安装Hexohexo是一个快速、简单且功能强大的 Node.js 博客框架。
+###Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
+1$ npm install -g hexo
+首先新建一个文件夹用来存放你的博客然后到这个文件夹目录下输入1$ hexo init
+其他的一些常用命令12345678910111213141516171、 help ： 查看帮助信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于搭建blog的一些事">
 <meta property="og:url" content="http://yoursite.com/2017/02/04/关于搭建blog的一些坑点/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-02-04T07:07:18.000Z">
+<meta property="og:description" content="##一、安装Hexohexo是一个快速、简单且功能强大的 Node.js 博客框架。
+###Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
+1$ npm install -g hexo
+首先新建一个文件夹用来存放你的博客然后到这个文件夹目录下输入1$ hexo init
+其他的一些常用命令12345678910111213141516171、 help ： 查看帮助信息">
+<meta property="og:updated_time" content="2017-02-06T09:29:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于搭建blog的一些坑点">
+<meta name="twitter:title" content="关于搭建blog的一些事">
+<meta name="twitter:description" content="##一、安装Hexohexo是一个快速、简单且功能强大的 Node.js 博客框架。
+###Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
+1$ npm install -g hexo
+首先新建一个文件夹用来存放你的博客然后到这个文件夹目录下输入1$ hexo init
+其他的一些常用命令12345678910111213141516171、 help ： 查看帮助信息">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -74,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于搭建blog的一些坑点
+      关于搭建blog的一些事
     </h1>
   
 
@@ -82,11 +97,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>##一、安装Hexo<br><a href="https://hexo.io" target="_blank" rel="external">hexo</a>是一个快速、简单且功能强大的 Node.js 博客框架。</p>
+<p>###Hexo的安装<br>由于 Hexo 是基于 Node ，安装前要先安装 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node</a></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span> -g hexo</div></pre></td></tr></table></figure>
+<p>首先新建一个文件夹用来存放你的博客然后到这个文件夹目录下输入<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo init</div></pre></td></tr></table></figure></p>
+<p>其他的一些常用命令<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、 help ： 查看帮助信息</div><div class="line"></div><div class="line"><span class="number">2</span>、 init [文件夹名] ： 创建一个hexo项目，不指定文件夹名，则在当前目录创建</div><div class="line"></div><div class="line"><span class="number">3</span>、 version ： 查看hexo的版本</div><div class="line"></div><div class="line"><span class="number">4</span>、 --config config-path ：指定配置文件，代替默认的_config.yml</div><div class="line"></div><div class="line"><span class="number">5</span>、 --cwd cwd-path ：自定义当前工作目录</div><div class="line"></div><div class="line"><span class="number">5</span>、 --debug ：调试模式，输出所有日志信息</div><div class="line"></div><div class="line"><span class="number">6</span>、 --safe ：安全模式，禁用所有的插件和脚本</div><div class="line"></div><div class="line"><span class="number">7</span>、 --silent ：无日志输出模式</div><div class="line"></div><div class="line">安装好后，我们就可以使用Hexo创建项目了。</div></pre></td></tr></table></figure></p>
+<p>##二、Hexo启动本地服务器<br>启动Hexo服务器<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">server</span></div></pre></td></tr></table></figure></p>
+<p>这时端口4000被打开了，我们能过浏览器打开地址， <em><a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></em> 或者 <em><a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></em> 。</p>
+<p>##三、Hexo的基本用法</p>
+<p>####1、通过new命令新建一篇文章<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">new</span></div></pre></td></tr></table></figure></p>
+<p>####2、通过generate命令将文章做静态化处理<br>生成对应的html, javascript, css，使得所有的文章都是由静态文件组成的：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">generate</span></div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo g</div></pre></td></tr></table></figure></p>
+<p>####3、编辑配置信息<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi _config.yml</div><div class="line"></div><div class="line"># Extensions</div><div class="line">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></div><div class="line">## Themes: http:<span class="comment">//hexo.io/themes/</span></div><div class="line">theme: next</div></pre></td></tr></table></figure></p>
+<p>####4、通过deploy发布<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure></p>
+<p>####5、博客主题<br>Hexo有非常多的主题可以选择替换，替换流程也特别方便</p>
+<p>1.从Hexo Themes中找到一个你心仪的主题</p>
+<p>##四、利用GitHub Pages托管网页<br>GitHub Pages 可以被认为是用户编写的、托管在github上的静态网页</p>
+<p>但是对于一个新手来说，看到一大堆源码，只会让人头晕脑涨，不知何处入手。他希望看到的是，一个简明易懂的网页，说明每一步应该怎么做。因此，github就设计了<a href="https://pages.github.com" target="_blank" rel="external">Pages功能</a>，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。</p>
+<p>##总结</p>
+<p>Hexo常用命令：</p>
+<p>hexo n == hexo new<br>hexo g == hexo generate<br>hexo s == hexo server<br>hexo d == hexo deploy</p>
+<p>参考文章<br><a href="http://www.tuicool.com/articles/ueI7naV" target="_blank" rel="external">简洁轻便的博客平台: Hexo详解
+</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/04/关于搭建blog的一些坑点/" data-id="ciytg2gqe00032rzpvr31x999" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/04/关于搭建blog的一些坑点/" data-id="ciytwccex00015tzpvtjzuqnx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,7 +172,7 @@
       <ul>
         
           <li>
-            <a href="/2017/02/04/关于搭建blog的一些坑点/">关于搭建blog的一些坑点</a>
+            <a href="/2017/02/04/关于搭建blog的一些坑点/">关于搭建blog的一些事</a>
           </li>
         
           <li>
