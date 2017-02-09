@@ -98,7 +98,7 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
 1$ npm install -g hexo
 首先新建一个文件夹用来存放你的博客然后到这个文件夹目录下输入1$ hexo init
 其他的一些常用命令12345678910111213141516171、 help ： 查看帮助信息2、 in">
-<meta property="og:updated_time" content="2017-02-07T02:10:22.000Z">
+<meta property="og:updated_time" content="2017-02-09T02:20:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于搭建blog的一些事">
 <meta name="twitter:description" content="一、安装Hexohexo是一个快速、简单且功能强大的 Node.js 博客框架。
@@ -199,7 +199,7 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -209,7 +209,7 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -289,7 +289,7 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-04T15:07:18+08:00">
                 2017-02-04
@@ -334,12 +334,12 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
 <p>其他的一些常用命令<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、 help ： 查看帮助信息</div><div class="line"></div><div class="line"><span class="number">2</span>、 init [文件夹名] ： 创建一个hexo项目，不指定文件夹名，则在当前目录创建</div><div class="line"></div><div class="line"><span class="number">3</span>、 version ： 查看hexo的版本</div><div class="line"></div><div class="line"><span class="number">4</span>、 --config config-path ：指定配置文件，代替默认的_config.yml</div><div class="line"></div><div class="line"><span class="number">5</span>、 --cwd cwd-path ：自定义当前工作目录</div><div class="line"></div><div class="line"><span class="number">5</span>、 --debug ：调试模式，输出所有日志信息</div><div class="line"></div><div class="line"><span class="number">6</span>、 --safe ：安全模式，禁用所有的插件和脚本</div><div class="line"></div><div class="line"><span class="number">7</span>、 --silent ：无日志输出模式</div><div class="line"></div><div class="line">安装好后，我们就可以使用Hexo创建项目了。</div></pre></td></tr></table></figure></p>
 <h2 id="二、Hexo启动本地服务器"><a href="#二、Hexo启动本地服务器" class="headerlink" title="二、Hexo启动本地服务器"></a>二、Hexo启动本地服务器</h2><p>启动Hexo服务器<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">server</span></div></pre></td></tr></table></figure></p>
 <p>这时端口4000被打开了，我们能过浏览器打开地址， <em><a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></em> 或者 <em><a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></em> 。</p>
-<h2 id="三、Hexo的基本用法"><a href="#三、Hexo的基本用法" class="headerlink" title="三、Hexo的基本用法"></a>三、Hexo的基本用法</h2><h4 id="1、通过new命令新建一篇文章"><a href="#1、通过new命令新建一篇文章" class="headerlink" title="1、通过new命令新建一篇文章"></a>1、通过new命令新建一篇文章</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">new</span></div></pre></td></tr></table></figure>
-<h4 id="2、通过generate命令将文章做静态化处理"><a href="#2、通过generate命令将文章做静态化处理" class="headerlink" title="2、通过generate命令将文章做静态化处理"></a>2、通过generate命令将文章做静态化处理</h4><p>生成对应的html, javascript, css，使得所有的文章都是由静态文件组成的：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">generate</span></div></pre></td></tr></table></figure></p>
+<h2 id="三、Hexo的基本用法"><a href="#三、Hexo的基本用法" class="headerlink" title="三、Hexo的基本用法"></a>三、Hexo的基本用法</h2><h3 id="1、通过new命令新建一篇文章"><a href="#1、通过new命令新建一篇文章" class="headerlink" title="1、通过new命令新建一篇文章"></a>1、通过new命令新建一篇文章</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">new</span></div></pre></td></tr></table></figure>
+<h3 id="2、通过generate命令将文章做静态化处理"><a href="#2、通过generate命令将文章做静态化处理" class="headerlink" title="2、通过generate命令将文章做静态化处理"></a>2、通过generate命令将文章做静态化处理</h3><p>生成对应的html, javascript, css，使得所有的文章都是由静态文件组成的：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">generate</span></div></pre></td></tr></table></figure></p>
 <p>或者<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo g</div></pre></td></tr></table></figure></p>
-<h4 id="3、编辑配置信息"><a href="#3、编辑配置信息" class="headerlink" title="3、编辑配置信息"></a>3、编辑配置信息</h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi _config.yml</div><div class="line"></div><div class="line"># Extensions</div><div class="line">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></div><div class="line">## Themes: http:<span class="comment">//hexo.io/themes/</span></div><div class="line">theme: next</div></pre></td></tr></table></figure>
-<h4 id="4、通过deploy发布"><a href="#4、通过deploy发布" class="headerlink" title="4、通过deploy发布"></a>4、通过deploy发布</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure>
-<h4 id="5、博客主题"><a href="#5、博客主题" class="headerlink" title="5、博客主题"></a>5、博客主题</h4><p>Hexo有非常多的主题可以选择替换，替换流程也特别方便</p>
+<h3 id="3、编辑配置信息"><a href="#3、编辑配置信息" class="headerlink" title="3、编辑配置信息"></a>3、编辑配置信息</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi _config.yml</div><div class="line"></div><div class="line"># Extensions</div><div class="line">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></div><div class="line">## Themes: http:<span class="comment">//hexo.io/themes/</span></div><div class="line">theme: next</div></pre></td></tr></table></figure>
+<h3 id="4、通过deploy发布"><a href="#4、通过deploy发布" class="headerlink" title="4、通过deploy发布"></a>4、通过deploy发布</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure>
+<h3 id="5、博客主题"><a href="#5、博客主题" class="headerlink" title="5、博客主题"></a>5、博客主题</h3><p>Hexo有非常多的主题可以选择替换，替换流程也特别方便</p>
 <p>1.从<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Hexo Themes</a>中找到一个你心仪的主题<br>2.在你的blog文件目录下，执行下面的命令<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span>.git themes/<span class="keyword">next</span></div></pre></td></tr></table></figure></p>
 <p>3.编辑配置信息<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi _config.yml</div><div class="line"></div><div class="line"># Extensions</div><div class="line">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></div><div class="line">## Themes: http:<span class="comment">//hexo.io/themes/</span></div><div class="line">theme: next</div></pre></td></tr></table></figure></p>
 <p>4.生成博客页面<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo g</div></pre></td></tr></table></figure></p>
@@ -433,10 +433,10 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -455,7 +455,7 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -493,7 +493,7 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装Hexo"><span class="nav-number">1.</span> <span class="nav-text">一、安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo的安装"><span class="nav-number">1.1.</span> <span class="nav-text">Hexo的安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Hexo启动本地服务器"><span class="nav-number">2.</span> <span class="nav-text">二、Hexo启动本地服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Hexo的基本用法"><span class="nav-number">3.</span> <span class="nav-text">三、Hexo的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、通过new命令新建一篇文章"><span class="nav-number">3.0.1.</span> <span class="nav-text">1、通过new命令新建一篇文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、通过generate命令将文章做静态化处理"><span class="nav-number">3.0.2.</span> <span class="nav-text">2、通过generate命令将文章做静态化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、编辑配置信息"><span class="nav-number">3.0.3.</span> <span class="nav-text">3、编辑配置信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、通过deploy发布"><span class="nav-number">3.0.4.</span> <span class="nav-text">4、通过deploy发布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、博客主题"><span class="nav-number">3.0.5.</span> <span class="nav-text">5、博客主题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、利用GitHub-Pages托管网页"><span class="nav-number">4.</span> <span class="nav-text">四、利用GitHub Pages托管网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装Hexo"><span class="nav-number">1.</span> <span class="nav-text">一、安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo的安装"><span class="nav-number">1.1.</span> <span class="nav-text">Hexo的安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Hexo启动本地服务器"><span class="nav-number">2.</span> <span class="nav-text">二、Hexo启动本地服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Hexo的基本用法"><span class="nav-number">3.</span> <span class="nav-text">三、Hexo的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、通过new命令新建一篇文章"><span class="nav-number">3.1.</span> <span class="nav-text">1、通过new命令新建一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、通过generate命令将文章做静态化处理"><span class="nav-number">3.2.</span> <span class="nav-text">2、通过generate命令将文章做静态化处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、编辑配置信息"><span class="nav-number">3.3.</span> <span class="nav-text">3、编辑配置信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、通过deploy发布"><span class="nav-number">3.4.</span> <span class="nav-text">4、通过deploy发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、博客主题"><span class="nav-number">3.5.</span> <span class="nav-text">5、博客主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、利用GitHub-Pages托管网页"><span class="nav-number">4.</span> <span class="nav-text">四、利用GitHub Pages托管网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -523,7 +523,7 @@ Hexo的安装由于 Hexo 是基于 Node ，安装前要先安装 Node
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
