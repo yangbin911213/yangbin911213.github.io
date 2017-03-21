@@ -103,7 +103,17 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
 ###一、基础知识
 #####">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-c1dba88ff044a0ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-21T06:24:06.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-6db18cd05e7ee285.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-b0c31cd65ebff7af.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-b1a653e18d45f88b.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-d70c47e8c96b85d4.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-e0eef0b4957d2461.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-fa9bf075d6b4cb28.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-ef6ead47878c3c9b.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-9db65690d5585c0a.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-afaa16aec418e376.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-f887ca4307634412.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2017-03-21T07:11:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS动画基础">
 <meta name="twitter:description" content="####导语
@@ -207,7 +217,7 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -217,7 +227,7 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -297,7 +307,7 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-04T14:29:47+08:00">
                 2017-02-04
@@ -357,15 +367,33 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
 <li>repeatCount：一直不断重复：swift:Float.infinity，OC:HUGE_VALF</li>
 <li>timingFunction:<br>kCAMediaTimingFunctionLinear:匀速改变<br>kCAMediaTimingFunctionEaseIn:渐入<br>kCAMediaTimingFunctionEaseOut: 渐出<br>kCAMediaTimingFunctionEaseInEaseOut:渐入渐出<br>kCAMediaTimingFunctionDefault:隐式动画更加适合</li>
 </ul>
-<p>######使用方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pathAnim.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</div></pre></td></tr></table></figure></p>
+<p>######使用方法<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pathAnim.timingFunction = <span class="string">[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]</span>;</div></pre></td></tr></table></figure></p>
 <ul>
-<li>fillMode<br>kCAFillModeForwards：动画开始之后layer的状态将保持在动画的最后一帧，而removedOnCompletion的默认属性值是 YES，所以为了使动画结束之后layer保持结束状态，应将removedOnCompletion设置为NO。<br>kCAFillModeBackwards：将会立即执行动画的第一帧，不论是否设置了 beginTime属性。观察发现，设置该值，刚开始视图不见，还不知道应用在哪里。<br>kCAFillModeBoth：该值是 kCAFillModeForwards 和kCAFillModeBackwards的组合状态<br>kCAFillModeRemoved：动画将在设置的 beginTime 开始执行（如没有设置beginTime属性，则动画立即执行），动画执行完成后将会layer的改变恢复原状。</li>
+<li>fillMode<br>kCAFillModeForwards：动画开始之后layer的状态将保持在动画的最后一帧，而removedOnCompletion的默认属性值是 YES，所以为了使动画结束之后layer保持结束状态，应将removedOnCompletion设置为NO。<br>kCAFillModeBackwards：将会立即执行动画的第一帧，不论是否设置了 beginTime属性。观察发现，设置该值，刚开始视图不见，还不知道应用在哪里。<br>kCAFillModeBoth：该值是 kCAFillModeForwards 和kCAFillModeBackwards的组合状态<br>kCAFillModeRemoved：动画将在设置的 beginTime 开始执行（如没有设置beginTime属性，则动画立即执行），动画执行完成后将会layer的改变恢复原状。<br>#####示例</li>
+<li>旋转动画</li>
 </ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-6db18cd05e7ee285.gif?imageMogr2/auto-orient/strip" alt="旋转动画.gif"></p>
+<ul>
+<li>位移动画<br><img src="http://upload-images.jianshu.io/upload_images/2151844-b0c31cd65ebff7af.gif?imageMogr2/auto-orient/strip" alt="位移动画.gif"></li>
+<li>背景颜色变化动画、背景图片变化动画、圆角变化动画</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-b1a653e18d45f88b.gif?imageMogr2/auto-orient/strip" alt="背景颜色变化动画.gif"></p>
+<ul>
+<li>比例缩放动画</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-d70c47e8c96b85d4.gif?imageMogr2/auto-orient/strip" alt="1485149752466446.gif"></p>
+<ul>
+<li>size大小缩放、透明值变化动画（可用作闪烁效果）</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-e0eef0b4957d2461.gif?imageMogr2/auto-orient/strip" alt="size大小缩放、透明值变化动画.gif"></p>
 <p>######2、CAKeyframeAnimation</p>
 <p>CAKeyframeAnimation是核心动画里面的帧动画,它提供了按照指定的一串值进行动画,好像拍电影一样的一帧一帧的效果</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(<span class="number">50</span>, <span class="number">100</span>, <span class="number">250</span>, <span class="number">250</span>)]<span class="comment">;</span></div><div class="line"></div><div class="line">UIBezierPath *<span class="keyword">bezierPath </span>= [UIBezierPath <span class="keyword">bezierPathWithOvalInRect:tempView.frame];</span></div><div class="line">UIView *animView = [[UIView alloc] initWithFrame:CGRectMake(<span class="number">50</span>, <span class="number">50</span>, <span class="number">70</span>, <span class="number">80</span>)]<span class="comment">;</span></div><div class="line">animView.<span class="keyword">backgroundColor </span>= [UIColor redColor]<span class="comment">;</span></div><div class="line">[self.view <span class="keyword">addSubview:animView];</span></div><div class="line"></div><div class="line">CAKeyframeAnimation *<span class="keyword">orbitAnim </span>= [CAKeyframeAnimation animationWithKeyPath:@<span class="string">"position"</span>]<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.duration </span>= <span class="number">5</span><span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.path </span>= <span class="keyword">bezierPath.CGPath;</span></div><div class="line"><span class="keyword">orbitAnim.calculationMode </span>= kCAAnimationPaced<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.fillMode </span>= kCAFillModeForwards<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.repeatCount </span>= INFINITY<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.rotationMode </span>= kCAAnimationRotateAutoReverse<span class="comment">;</span></div><div class="line">[animView.layer <span class="keyword">addAnimation:orbitAnim </span>forKey:@<span class="string">"orbitAnim"</span>]<span class="comment">;</span></div><div class="line"></div><div class="line">CAShapeLayer *<span class="keyword">shapeLayer </span>= [[CAShapeLayer alloc] init]<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.strokeColor </span>= [UIColor purpleColor].CGColor<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.fillColor </span>= [UIColor clearColor].CGColor<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.lineWidth </span>= <span class="number">0</span>.<span class="number">5</span><span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.lineJoin </span>= kCALineJoinRound<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.lineCap </span>= kCALineCapRound<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.path </span>= <span class="keyword">bezierPath.CGPath;</span></div><div class="line">[self.view.layer <span class="keyword">addSublayer:shapeLayer];</span></div></pre></td></tr></table></figure>
+<ul>
+<li>示例</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-fa9bf075d6b4cb28.gif?imageMogr2/auto-orient/strip" alt="CAKeyframeAnimation路径动画.gif"></p>
 <p>######3、CATransition<br>主要用于转场动画从一个场景以动画的形式过渡到另一个场景</p>
-<p><img src="" alt=""></p>
 <p>另外还有一些系统未公开的动画效果：</p>
 <blockquote>
 <p>[“cube”, “suckEffect”, “rippleEffect”, “pageCurl”, “pageUnCurl”, “oglFlip”, “cameraIrisHollowOpen”,  “cameraIrisHollowClose”, “spewEffect”,”genieEffect”,”unGenieEffect”,”twist”,”tubey”,”swirl”,”charminUltra”, “zoomyIn”, “zoomyOut”, “oglApplicationSuspend”]</p>
@@ -379,6 +407,7 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
 <li>damping:阻尼系数，阻止弹簧伸缩的系数，阻尼系数越大，停止越快</li>
 <li>initialVelocity:初始速率，动画视图的初始速度大小速率为正数时，速度方向与运动方向一致，速率为负数时，速度方向与运动方向相反如果</li>
 <li>settlingDuration:结算时间 返回弹簧动画到停止时的估算时间，根据当前的动画参数估算通常弹簧动画的时间使用结算时间比较准确</li>
+<li>示例<br><img src="http://upload-images.jianshu.io/upload_images/2151844-ef6ead47878c3c9b.gif?imageMogr2/auto-orient/strip" alt="弹簧.gif"></li>
 </ul>
 <p>#####逐帧动画<br>实际就是周期性的(CADisplayLink)对UIView背后的CALayer的修改<br>著名的facebook的<a href="https://github.com/facebook/pop" target="_blank" rel="external">pop</a>动画框架，就是使用CADisplayLink这种逐帧绘制的方式。</p>
 <p>###三、关键帧与逐帧对比</p>
@@ -386,6 +415,19 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
 <li>关键帧：只需要修改某个属性值，简单方便，但涉及深层次内容较多，需要更多的理解和联系。</li>
 <li>逐帧：实现原理简单，但绘制动画的过程复杂，处理的事情多开销大，绘制过程中需要数学、物理学知识计算中间量。</li>
 </ul>
+<p>###四、一些有意思的动画</p>
+<ul>
+<li><p>曲线划线动画<br><img src="http://upload-images.jianshu.io/upload_images/2151844-9db65690d5585c0a.gif?imageMogr2/auto-orient/strip" alt="曲线划线动画.gif"></p>
+</li>
+<li><p>利用正弦曲线做的，也是逐帧动画，相信很多人都做过：</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-afaa16aec418e376.gif?imageMogr2/auto-orient/strip" alt="正弦曲线.gif"></p>
+<ul>
+<li>粒子动画</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-f887ca4307634412.gif?imageMogr2/auto-orient/strip" alt="粒子动画.gif"></p>
+<p>最后附 demo<a href="https://github.com/yangbin911213/YBAnimation" target="_blank" rel="external">https://github.com/yangbin911213/YBAnimation</a></p>
 
       
     </div>
@@ -486,7 +528,7 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -538,11 +580,11 @@ Core Animation其实是一个令人误解的命名，大多数人认为它只是
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Thème -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
