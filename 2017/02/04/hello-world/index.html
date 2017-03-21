@@ -84,19 +84,36 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="####导语
+
+这段时间我们部门组织学习分享Core Animation，所以我就稍微整理了下关于动画这块的分享。
+
+Core Animation其实是一个令人误解的命名，大多数人认为它只是用来做动画的，但实际上市一个叫做Layer Kit演变而来，所以动画只是Core Animation特性的冰山一角而已，接下来我们就讨论下这个冰山一角的常规用法，纯粹是抛砖引玉。
+###一、基础知识
+#####">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="iOS动画基础">
 <meta property="og:url" content="http://yoursite.com/2017/02/04/hello-world/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-02-04T06:33:23.000Z">
+<meta property="og:description" content="####导语
+
+这段时间我们部门组织学习分享Core Animation，所以我就稍微整理了下关于动画这块的分享。
+
+Core Animation其实是一个令人误解的命名，大多数人认为它只是用来做动画的，但实际上市一个叫做Layer Kit演变而来，所以动画只是Core Animation特性的冰山一角而已，接下来我们就讨论下这个冰山一角的常规用法，纯粹是抛砖引玉。
+###一、基础知识
+#####">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-c1dba88ff044a0ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-03-21T06:24:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="iOS动画基础">
+<meta name="twitter:description" content="####导语
+
+这段时间我们部门组织学习分享Core Animation，所以我就稍微整理了下关于动画这块的分享。
+
+Core Animation其实是一个令人误解的命名，大多数人认为它只是用来做动画的，但实际上市一个叫做Layer Kit演变而来，所以动画只是Core Animation特性的冰山一角而已，接下来我们就讨论下这个冰山一角的常规用法，纯粹是抛砖引玉。
+###一、基础知识
+#####">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2151844-c1dba88ff044a0ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -130,7 +147,7 @@ Quick">
 
 
 
-  <title> Hello World | Hexo </title>
+  <title> iOS动画基础 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -267,7 +284,7 @@ Quick">
             
             
               
-                Hello World
+                iOS动画基础
               
             
           </h1>
@@ -318,8 +335,57 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+        <p>####导语</p>
+<blockquote>
+<p>这段时间我们部门组织学习分享Core Animation，所以我就稍微整理了下关于动画这块的分享。</p>
+</blockquote>
+<p><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html" target="_blank" rel="external">Core Animation</a>其实是一个令人误解的命名，大多数人认为它只是用来做动画的，但实际上市一个叫做Layer Kit演变而来，所以动画只是Core Animation特性的冰山一角而已，接下来我们就讨论下这个冰山一角的常规用法，纯粹是抛砖引玉。</p>
+<p>###一、基础知识</p>
+<p>#####1、动画的本质</p>
+<ul>
+<li>一定时间内属性值的变化，属性为位置、透明度、旋转等</li>
+</ul>
+<p>#####2、动画实现方式</p>
+<ul>
+<li>逐帧：需要处理动画的每一帧，这样的实现动画的方式叫做逐帧动画</li>
+<li>关键帧：我们只需给定几个关键帧的画面，其余过度帧都由计算机自动生成</li>
+</ul>
+<p>###二、动画实现</p>
+<p>#####关键帧动画</p>
+<p>######1、CABasicAnimation<br>1、动画的属性<br><img src="http://upload-images.jianshu.io/upload_images/2151844-c1dba88ff044a0ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1485148932685541.png"><br>2、属性值的解释</p>
+<ul>
+<li>repeatCount：一直不断重复：swift:Float.infinity，OC:HUGE_VALF</li>
+<li>timingFunction:<br>kCAMediaTimingFunctionLinear:匀速改变<br>kCAMediaTimingFunctionEaseIn:渐入<br>kCAMediaTimingFunctionEaseOut: 渐出<br>kCAMediaTimingFunctionEaseInEaseOut:渐入渐出<br>kCAMediaTimingFunctionDefault:隐式动画更加适合</li>
+</ul>
+<p>######使用方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pathAnim.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</div></pre></td></tr></table></figure></p>
+<ul>
+<li>fillMode<br>kCAFillModeForwards：动画开始之后layer的状态将保持在动画的最后一帧，而removedOnCompletion的默认属性值是 YES，所以为了使动画结束之后layer保持结束状态，应将removedOnCompletion设置为NO。<br>kCAFillModeBackwards：将会立即执行动画的第一帧，不论是否设置了 beginTime属性。观察发现，设置该值，刚开始视图不见，还不知道应用在哪里。<br>kCAFillModeBoth：该值是 kCAFillModeForwards 和kCAFillModeBackwards的组合状态<br>kCAFillModeRemoved：动画将在设置的 beginTime 开始执行（如没有设置beginTime属性，则动画立即执行），动画执行完成后将会layer的改变恢复原状。</li>
+</ul>
+<p>######2、CAKeyframeAnimation</p>
+<p>CAKeyframeAnimation是核心动画里面的帧动画,它提供了按照指定的一串值进行动画,好像拍电影一样的一帧一帧的效果</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(<span class="number">50</span>, <span class="number">100</span>, <span class="number">250</span>, <span class="number">250</span>)]<span class="comment">;</span></div><div class="line"></div><div class="line">UIBezierPath *<span class="keyword">bezierPath </span>= [UIBezierPath <span class="keyword">bezierPathWithOvalInRect:tempView.frame];</span></div><div class="line">UIView *animView = [[UIView alloc] initWithFrame:CGRectMake(<span class="number">50</span>, <span class="number">50</span>, <span class="number">70</span>, <span class="number">80</span>)]<span class="comment">;</span></div><div class="line">animView.<span class="keyword">backgroundColor </span>= [UIColor redColor]<span class="comment">;</span></div><div class="line">[self.view <span class="keyword">addSubview:animView];</span></div><div class="line"></div><div class="line">CAKeyframeAnimation *<span class="keyword">orbitAnim </span>= [CAKeyframeAnimation animationWithKeyPath:@<span class="string">"position"</span>]<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.duration </span>= <span class="number">5</span><span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.path </span>= <span class="keyword">bezierPath.CGPath;</span></div><div class="line"><span class="keyword">orbitAnim.calculationMode </span>= kCAAnimationPaced<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.fillMode </span>= kCAFillModeForwards<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.repeatCount </span>= INFINITY<span class="comment">;</span></div><div class="line"><span class="keyword">orbitAnim.rotationMode </span>= kCAAnimationRotateAutoReverse<span class="comment">;</span></div><div class="line">[animView.layer <span class="keyword">addAnimation:orbitAnim </span>forKey:@<span class="string">"orbitAnim"</span>]<span class="comment">;</span></div><div class="line"></div><div class="line">CAShapeLayer *<span class="keyword">shapeLayer </span>= [[CAShapeLayer alloc] init]<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.strokeColor </span>= [UIColor purpleColor].CGColor<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.fillColor </span>= [UIColor clearColor].CGColor<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.lineWidth </span>= <span class="number">0</span>.<span class="number">5</span><span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.lineJoin </span>= kCALineJoinRound<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.lineCap </span>= kCALineCapRound<span class="comment">;</span></div><div class="line"><span class="keyword">shapeLayer.path </span>= <span class="keyword">bezierPath.CGPath;</span></div><div class="line">[self.view.layer <span class="keyword">addSublayer:shapeLayer];</span></div></pre></td></tr></table></figure>
+<p>######3、CATransition<br>主要用于转场动画从一个场景以动画的形式过渡到另一个场景</p>
+<p><img src="" alt=""></p>
+<p>另外还有一些系统未公开的动画效果：</p>
+<blockquote>
+<p>[“cube”, “suckEffect”, “rippleEffect”, “pageCurl”, “pageUnCurl”, “oglFlip”, “cameraIrisHollowOpen”,  “cameraIrisHollowClose”, “spewEffect”,”genieEffect”,”unGenieEffect”,”twist”,”tubey”,”swirl”,”charminUltra”, “zoomyIn”, “zoomyOut”, “oglApplicationSuspend”]</p>
+</blockquote>
+<p>代码示例：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">CATransition *pageCurlAnim = [[CATransition alloc] init]<span class="comment">;</span></div><div class="line">pageCurlAnim.delegate = self<span class="comment">;</span></div><div class="line">pageCurlAnim.duration = <span class="number">1</span>.<span class="number">0</span><span class="comment">;</span></div><div class="line">pageCurlAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]<span class="comment">;</span></div><div class="line">pageCurlAnim.type = animArr[index]<span class="comment">;</span></div><div class="line">pageCurlAnim.<span class="keyword">subtype </span>= kCATransitionFromLeft<span class="comment">;</span></div><div class="line">pageCurlAnim.repeatCount = <span class="number">1</span><span class="comment">;</span></div><div class="line">[pageCurlAnim setValue:@<span class="string">"transitionAnim"</span> forKey:@<span class="string">"anim"</span>]<span class="comment">;</span></div><div class="line">[transitionLab.layer <span class="keyword">addAnimation:pageCurlAnim </span>forKey:@<span class="string">"transition"</span>]<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>######4、CASpringAnimation<br>iOS9才引入的动画类，在以前我们都是使用facebook的pop来做这种弹簧效果，它继承于CABaseAnimation，用于制作弹簧动画</p>
+<p>######参数说明</p>
+<ul>
+<li>mass:质量，影响图层运动时的弹簧惯性，质量越大，弹簧拉伸和压缩的幅度越大，动画的速度变慢，并且波动幅度变大</li>
+<li>stiffness:刚度系数(劲度系数/弹性系数)，刚度系数越大，形变产生的力就越大，运动越快</li>
+<li>damping:阻尼系数，阻止弹簧伸缩的系数，阻尼系数越大，停止越快</li>
+<li>initialVelocity:初始速率，动画视图的初始速度大小速率为正数时，速度方向与运动方向一致，速率为负数时，速度方向与运动方向相反如果</li>
+<li>settlingDuration:结算时间 返回弹簧动画到停止时的估算时间，根据当前的动画参数估算通常弹簧动画的时间使用结算时间比较准确</li>
+</ul>
+<p>#####逐帧动画<br>实际就是周期性的(CADisplayLink)对UIView背后的CALayer的修改<br>著名的facebook的<a href="https://github.com/facebook/pop" target="_blank" rel="external">pop</a>动画框架，就是使用CADisplayLink这种逐帧绘制的方式。</p>
+<p>###三、关键帧与逐帧对比</p>
+<ul>
+<li>关键帧：只需要修改某个属性值，简单方便，但涉及深层次内容较多，需要更多的理解和联系。</li>
+<li>逐帧：实现原理简单，但绘制动画的过程复杂，处理的事情多开销大，绘制过程中需要数学、物理学知识计算中间量。</li>
+</ul>
 
       
     </div>
@@ -405,17 +471,8 @@ Quick">
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -457,22 +514,6 @@ Quick">
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>

@@ -1,0 +1,676 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文给大家介绍下内购，部分地方是摘自网络。
+创建测试App首先你需要登录App的ItunesConnection，你会看到如下界面点击新建App，会出现新建窗口；　　在之而立有几个需要填写的地方，名称、平台、语言简体中文，套装ID也就是Bundle Identifier，需要你在Certificates页面 申请BundleID，SKU可以理解为用户看到的唯一标示，会体现在你的app的App St">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS内购相关的坑点">
+<meta property="og:url" content="http://yoursite.com/2016/10/21/iOS内购相关的一些坑点/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文给大家介绍下内购，部分地方是摘自网络。
+创建测试App首先你需要登录App的ItunesConnection，你会看到如下界面点击新建App，会出现新建窗口；　　在之而立有几个需要填写的地方，名称、平台、语言简体中文，套装ID也就是Bundle Identifier，需要你在Certificates页面 申请BundleID，SKU可以理解为用户看到的唯一标示，会体现在你的app的App St">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-99bee4e45399b0e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-9dc3d82378987903.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-b64e9e850b28ada2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-b25bc11bb2a544bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-22482ef6bb5053c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-89f7d68ab1c0afc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-9ad28deeb7389853.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-ab771b382cb11c70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-d890feee76a5c153.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-6afeb08e2959e415.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2151844-8d7fd6c7c5fedc0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-20T08:33:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS内购相关的坑点">
+<meta name="twitter:description" content="本文给大家介绍下内购，部分地方是摘自网络。
+创建测试App首先你需要登录App的ItunesConnection，你会看到如下界面点击新建App，会出现新建窗口；　　在之而立有几个需要填写的地方，名称、平台、语言简体中文，套装ID也就是Bundle Identifier，需要你在Certificates页面 申请BundleID，SKU可以理解为用户看到的唯一标示，会体现在你的app的App St">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2151844-99bee4e45399b0e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/21/iOS内购相关的一些坑点/"/>
+
+
+
+
+
+  <title> iOS内购相关的坑点 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/21/iOS内购相关的一些坑点/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="John Doe">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS内购相关的坑点
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-21T13:46:45+08:00">
+                2016-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文给大家介绍下内购，部分地方是摘自网络。</p>
+<h2 id="创建测试App"><a href="#创建测试App" class="headerlink" title="创建测试App"></a>创建测试App</h2><p>首先你需要登录App的ItunesConnection，你会看到如下界面<img src="http://upload-images.jianshu.io/upload_images/2151844-99bee4e45399b0e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>点击新建App，会出现新建窗口；<br><img src="http://upload-images.jianshu.io/upload_images/2151844-9dc3d82378987903.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>　　在之而立有几个需要填写的地方，名称、平台、语言简体中文，套装ID也就是Bundle Identifier，需要你在Certificates页面 申请BundleID，SKU可以理解为用户看到的唯一标示，会体现在你的app的App Store的连接中。</p>
+<h2 id="二、添加内购"><a href="#二、添加内购" class="headerlink" title="二、添加内购"></a>二、添加内购</h2><p>App创建好之后，我们打开创建的App,在左上角选择功能，会看到左侧的App 内购买项目。我们点击右下角的加号，为App添加内购项目。<br><img src="http://upload-images.jianshu.io/upload_images/2151844-b64e9e850b28ada2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>之后我们会看到类型的选项，如下图<br><img src="http://upload-images.jianshu.io/upload_images/2151844-b25bc11bb2a544bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>消耗型项目 就像你玩游戏需要买金币，买钻石等，只要花钱就可以无限次的购买</li>
+<li>非消耗型项目 就像你在App Store购买App，买了一次之后就不用再买第二次，你拥有永久使用权。<br>在我们的app中，是充值会员，所以选择的是第一种，可以无限次购买<br><img src="http://upload-images.jianshu.io/upload_images/2151844-22482ef6bb5053c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>这里有几个选项，需要填写商品名称，产品ID以及价格等级，简单说明一下</li>
+</ul>
+<ol>
+<li>商品名称根据你的消费道具的实际意义来说明，比如“100颗宝石”，“100金币”等。</li>
+<li>产品ID是比较重要的，由项目自定义，只要唯一即可，因为测试，我在这里随便填写的123，在实际应用中，一定要认真填写。</li>
+<li>价格等级的话“查看价格表”中有对应的说明，可以对照着表中每个国家的货币价格与等级来选择<br>接下来是语言选择，和上传快照如下图<br><img src="http://upload-images.jianshu.io/upload_images/2151844-89f7d68ab1c0afc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/2151844-9ad28deeb7389853.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>审核备注，根据实际情况填写，可以不填。而下面的屏幕快照，则是商品图片，以像素为单位最低尺寸为321，390，尺寸需要如下图，上传即可。<br><img src="http://upload-images.jianshu.io/upload_images/2151844-ab771b382cb11c70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>到这里为止，我们的内购项目则添加完成。接下来则是测试阶段了</p>
+<h2 id="三、申请沙盒测试账号-用来测试购买项目"><a href="#三、申请沙盒测试账号-用来测试购买项目" class="headerlink" title="三、申请沙盒测试账号(用来测试购买项目)"></a>三、申请沙盒测试账号(用来测试购买项目)</h2><p>这个账号，是利用苹果的沙盒测试环境来模拟AppStore的购买流程<br>首先我们回到iTunes Connect中，在这里我们选择用户和职能<br><img src="http://upload-images.jianshu.io/upload_images/2151844-d890feee76a5c153.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>然后再上面的第三个选项沙盒技术测试员中点击➕，添加测试员。<br><img src="http://upload-images.jianshu.io/upload_images/2151844-6afeb08e2959e415.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ol>
+<li>在信息填写页面只简单说两句。</li>
+<li>所有信息都可以随意填写，不用管是否真实。</li>
+<li>App Store地区选择，一点要选对，它对应的是你创建的App的地区，你App是中国的话，在这里我们依然选择中国。</li>
+<li>此账号只能用来测试，不要在正式的appstore上使用</li>
+<li>填写完毕，点击保存后，我们则生成一个测试账号，当然这个账号是可以随时删除和添加的。<br><img src="http://upload-images.jianshu.io/upload_images/2151844-8d7fd6c7c5fedc0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>之后就是写代码了。。。</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)buy50:(<span class="keyword">id</span>)sender &#123;</div><div class="line">[<span class="keyword">self</span> buy:IAP0p20];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)buy:(<span class="keyword">int</span>)type &#123;</div><div class="line">buyType = type;</div><div class="line"></div><div class="line"><span class="keyword">if</span> ([<span class="built_in">SKPaymentQueue</span> canMakePayments]) &#123;</div><div class="line">[<span class="keyword">self</span> requestProductData];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************允许程序内购********************"</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************不允许程序内购********************"</span>);</div><div class="line"></div><div class="line"><span class="built_in">UIAlertView</span> *alertView = [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@"提示"</span> message:<span class="string">@"您的手机没有打开程序内付费购买"</span> delegate:<span class="literal">nil</span> cancelButtonTitle:<span class="string">@"关闭"</span> otherButtonTitles:<span class="literal">nil</span>, <span class="literal">nil</span>];</div><div class="line">[alertView show];</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">- (<span class="keyword">void</span>)requestProductData &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************请求对应的产品信息********************"</span>);</div><div class="line"></div><div class="line"><span class="built_in">NSArray</span> *products = <span class="literal">nil</span>;</div><div class="line"></div><div class="line"><span class="keyword">switch</span> (buyType) &#123;</div><div class="line"><span class="keyword">case</span> IAP0p20:</div><div class="line">&#123;</div><div class="line">currentProductId = ProductID_IAP0p20;</div><div class="line">products = [[<span class="built_in">NSArray</span> alloc] initWithObjects:ProductID_IAP0p20, <span class="literal">nil</span>];</div><div class="line">&#125;</div><div class="line"><span class="keyword">break</span>;</div><div class="line"></div><div class="line"><span class="keyword">default</span>:</div><div class="line"><span class="keyword">break</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">NSSet</span> *productSet = [<span class="built_in">NSSet</span> setWithArray:products];</div><div class="line"><span class="built_in">SKProductsRequest</span> *request = [[<span class="built_in">SKProductsRequest</span> alloc] initWithProductIdentifiers:productSet];</div><div class="line">request.delegate = <span class="keyword">self</span>;</div><div class="line">[request start];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - SKProductsRequestDelegate</span></div><div class="line"></div><div class="line"><span class="comment">// 请求协议//收到的产品信息</span></div><div class="line">- (<span class="keyword">void</span>)productsRequest:(<span class="built_in">SKProductsRequest</span> *)request didReceiveResponse:(<span class="built_in">SKProductsResponse</span> *)response &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************收到产品反馈信息********************"</span>);</div><div class="line"></div><div class="line"><span class="built_in">NSArray</span> *myProduct = response.products;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (myProduct.count == <span class="number">0</span>) &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************没有商品********************"</span>);</div><div class="line"><span class="keyword">return</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"productID:%@"</span>, response.invalidProductIdentifiers);</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"产品付费数量:%lu"</span>, (<span class="keyword">unsigned</span> <span class="keyword">long</span>)[myProduct count]);</div><div class="line"></div><div class="line"><span class="built_in">SKProduct</span> *p = <span class="literal">nil</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="built_in">SKProduct</span> *product <span class="keyword">in</span> myProduct) &#123;</div><div class="line"><span class="keyword">if</span> ([product.productIdentifier isEqualToString:currentProductId]) &#123;</div><div class="line">p = product;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">SKPayment</span> *payment = [<span class="built_in">SKPayment</span> paymentWithProduct:p];</div><div class="line"></div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************发送购买请求********************"</span>);</div><div class="line">[[<span class="built_in">SKPaymentQueue</span> defaultQueue] addPayment:payment];</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)request:(<span class="built_in">SKRequest</span> *)request didFailWithError:(<span class="built_in">NSError</span> *)error &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************请求失败********************"</span>);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)requestDidFinish:(<span class="built_in">SKRequest</span> *)request &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"****************反馈信息结束********************"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 监听购买结果</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)paymentQueue:(<span class="built_in">SKPaymentQueue</span> *)queue updatedTransactions:(<span class="built_in">NSArray</span>&lt;<span class="built_in">SKPaymentTransaction</span> *&gt; *)transactions &#123;</div><div class="line"><span class="keyword">for</span>(<span class="built_in">SKPaymentTransaction</span> *tran <span class="keyword">in</span> transactions)&#123;</div><div class="line"><span class="keyword">switch</span> (tran.transactionState) &#123;</div><div class="line"><span class="keyword">case</span> <span class="built_in">SKPaymentTransactionStatePurchased</span>:&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"交易完成"</span>);</div><div class="line">[<span class="keyword">self</span> verifyPurchaseWithPaymentTransaction];</div><div class="line">[[<span class="built_in">SKPaymentQueue</span> defaultQueue] finishTransaction:tran];</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> <span class="built_in">SKPaymentTransactionStatePurchasing</span>:</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"商品添加进列表"</span>);</div><div class="line"></div><div class="line"><span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> <span class="built_in">SKPaymentTransactionStateRestored</span>:&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"已经购买过商品"</span>);</div><div class="line"></div><div class="line">[[<span class="built_in">SKPaymentQueue</span> defaultQueue] finishTransaction:tran];</div><div class="line">&#125;</div><div class="line"><span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> <span class="built_in">SKPaymentTransactionStateFailed</span>:&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"交易失败"</span>);</div><div class="line">[[<span class="built_in">SKPaymentQueue</span> defaultQueue] finishTransaction:tran];</div><div class="line">&#125;</div><div class="line"><span class="keyword">break</span>;</div><div class="line"><span class="keyword">default</span>:</div><div class="line"><span class="keyword">break</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)completeTransaction:(<span class="built_in">SKPaymentTransaction</span> *)transaction &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"交易结束"</span>);</div><div class="line"></div><div class="line">[[<span class="built_in">SKPaymentQueue</span> defaultQueue] finishTransaction:transaction];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 沙盒测试环境验证</span></div><div class="line"><span class="meta">#define SANDBOX @<span class="meta-string">"https://sandbox.itunes.apple.com/verifyReceipt"</span></span></div><div class="line"></div><div class="line"><span class="comment">// 正式环境验证</span></div><div class="line"><span class="meta">#define AppStore @<span class="meta-string">"https://buy.itunes.apple.com/verifyReceipt"</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)verifyPurchaseWithPaymentTransaction &#123;</div><div class="line"><span class="comment">// 从沙盒中获取交易凭证并且拼接成请求体数据</span></div><div class="line"></div><div class="line"><span class="built_in">NSURL</span> *receiptUrl = [[<span class="built_in">NSBundle</span> mainBundle] appStoreReceiptURL];</div><div class="line"><span class="built_in">NSData</span> *receiptData = [<span class="built_in">NSData</span> dataWithContentsOfURL:receiptUrl];</div><div class="line"></div><div class="line"><span class="built_in">NSString</span> *receiptString=[receiptData base64EncodedStringWithOptions:<span class="built_in">NSDataBase64EncodingEndLineWithLineFeed</span>];<span class="comment">//转化为base64字符串</span></div><div class="line"></div><div class="line"><span class="built_in">NSString</span> *bodyString = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"&#123;\"receipt-data\" : \"%@\"&#125;"</span>, receiptString];<span class="comment">//拼接请求数据</span></div><div class="line"><span class="built_in">NSData</span> *bodyData = [bodyString dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</div><div class="line"></div><div class="line"><span class="comment">//创建请求到苹果官方进行购买验证</span></div><div class="line"><span class="built_in">NSURL</span> *url=[<span class="built_in">NSURL</span> URLWithString:SANDBOX];</div><div class="line"><span class="built_in">NSMutableURLRequest</span> *requestM=[<span class="built_in">NSMutableURLRequest</span> requestWithURL:url];</div><div class="line">requestM.HTTPBody=bodyData;</div><div class="line">requestM.HTTPMethod=<span class="string">@"POST"</span>;</div><div class="line"><span class="comment">//创建连接并发送同步请求</span></div><div class="line"><span class="built_in">NSError</span> *error=<span class="literal">nil</span>;</div><div class="line"><span class="built_in">NSData</span> *responseData=[<span class="built_in">NSURLConnection</span> sendSynchronousRequest:requestM returningResponse:<span class="literal">nil</span> error:&amp;error];</div><div class="line"><span class="keyword">if</span> (error) &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"验证购买过程中发生错误，错误信息：%@"</span>,error.localizedDescription);</div><div class="line"><span class="keyword">return</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">NSDictionary</span> *dic=[<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:responseData options:<span class="built_in">NSJSONReadingAllowFragments</span> error:<span class="literal">nil</span>];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,dic);</div><div class="line"><span class="keyword">if</span>([dic[<span class="string">@"status"</span>] intValue]==<span class="number">0</span>)&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"购买成功！"</span>);</div><div class="line"><span class="built_in">NSDictionary</span> *dicReceipt= dic[<span class="string">@"receipt"</span>];</div><div class="line"><span class="built_in">NSDictionary</span> *dicInApp=[dicReceipt[<span class="string">@"in_app"</span>] firstObject];</div><div class="line"><span class="built_in">NSString</span> *productIdentifier= dicInApp[<span class="string">@"product_id"</span>];<span class="comment">//读取产品标识</span></div><div class="line"><span class="comment">//如果是消耗品则记录购买数量，非消耗品则记录是否购买过</span></div><div class="line"><span class="built_in">NSUserDefaults</span> *defaults=[<span class="built_in">NSUserDefaults</span> standardUserDefaults];</div><div class="line"><span class="keyword">if</span> ([productIdentifier isEqualToString:currentProductId]) &#123;</div><div class="line"><span class="keyword">int</span> purchasedCount=[defaults integerForKey:productIdentifier];<span class="comment">//已购买数量</span></div><div class="line">[[<span class="built_in">NSUserDefaults</span> standardUserDefaults] setInteger:(purchasedCount+<span class="number">1</span>) forKey:productIdentifier];</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">[defaults setBool:<span class="literal">YES</span> forKey:productIdentifier];</div><div class="line">&#125;</div><div class="line"><span class="comment">//在此处对购买记录进行存储，可以存储到开发商的服务器端</span></div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"购买失败，未通过验证！"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - 监听释放</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)dealloc &#123;</div><div class="line">[[<span class="built_in">SKPaymentQueue</span> defaultQueue] removeTransactionObserver:<span class="keyword">self</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这里需要注意几点，</p>
+<ol>
+<li>代码中的_currentProId所填写的是你的购买项目的的ID，这个和第二步创建的内购的productID要一致；本例中是 123。</li>
+<li>在监听购买结果后，一定要调用[[SKPaymentQueue defaultQueue] finishTransaction:tran];来允许你从支付队列中移除交易。</li>
+<li>沙盒环境测试appStore内购流程的时候，请使用没越狱的设备。</li>
+<li>请务必使用真机来测试，一切以真机为准。</li>
+<li>项目的Bundle identifier需要与您申请AppID时填写的bundleID一致，不然会无法请求到商品信息。</li>
+<li>真机测试的时候，一定要退出原来的账号，才能用沙盒测试账号</li>
+<li>二次验证，请注意区分宏， 测试用沙盒验证，App Store审核的时候也使用的是沙盒购买，所以验证购买凭证的时候需要判断返回Status Code决定是否去沙盒进行二次验证，为了线上用户的使用，验证的顺序肯定是先验证正式环境，此时若返回值为21007，就需要去沙盒二次验证，因为此购买的是在沙盒进行的。</li>
+</ol>
+<p>文章参考：<br><a href="http://www.2cto.com/kf/201605/513647.html" target="_blank" rel="external">[iOS]应用内支付(内购)的个人开发过程及坑！
+</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/21/UIResponder事件响应者链/" rel="next" title="UIResponder事件响应者链">
+                <i class="fa fa-chevron-left"></i> UIResponder事件响应者链
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/23/git终端的常用命令/" rel="prev" title="git终端的常用命令">
+                git终端的常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建测试App"><span class="nav-number">1.</span> <span class="nav-text">创建测试App</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、添加内购"><span class="nav-number">2.</span> <span class="nav-text">二、添加内购</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、申请沙盒测试账号-用来测试购买项目"><span class="nav-number">3.</span> <span class="nav-text">三、申请沙盒测试账号(用来测试购买项目)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
